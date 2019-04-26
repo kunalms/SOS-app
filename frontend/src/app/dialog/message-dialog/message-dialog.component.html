@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>Message for {{data.user.name}}</h3>
+
+<div mat-dialog-content>
+  <mat-form-field class="">
+    <textarea type="text" matInput [(ngModel)]="data.message"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary" [mat-dialog-close]="data.message" cdkFocusInitial>Send to {{data.user.contact}}</button>
+  <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+</div>

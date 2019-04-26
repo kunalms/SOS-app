@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from "../services/user.service";
 import {User} from "../models/user";
 import {FormControl, Validators} from "@angular/forms";
+import {MatDialog, MatSnackBar} from "@angular/material";
+import {MessageDialogComponent} from "../dialog/message-dialog/message-dialog.component";
+import {SmsService} from "../services/sms.service";
 
 @Component({
   selector: 'app-users',
@@ -11,6 +14,8 @@ import {FormControl, Validators} from "@angular/forms";
 export class UsersComponent implements OnInit {
 
   users:User[];
+  userMessage:String;
+
   emailFormControl:FormControl = new FormControl('', [
     Validators.required,
   ]);
@@ -33,7 +38,7 @@ export class UsersComponent implements OnInit {
 
   selectedUser: User;
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService, public dialog: MatDialog, private smsService: SmsService, private snackBar: MatSnackBar) {
   }
 
 
@@ -77,5 +82,33 @@ export class UsersComponent implements OnInit {
     this.userService.deleteUser(user).subscribe(()=>{
       this.ngOnInit();
     });
+  }
+
+  callUser(user:User){
+    console.log('calling '+ user.name);
+  }
+
+  messageUser(user:User){
+    const dialogRef = this.dialog.open(MessageDialogComponent, {
+      width: '500px',
+      data: {user: user}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.userMessage = result;
+      if (this.userMessage !== undefined){
+        this.smsService.sendSms(user, this.userMessage).subscribe((response)=>{
+          this.snackBar.open(response.message, 'dismiss', {
+            duration: 5000,
+          });
+        }, (error)=>{
+          this.snackBar.open(error.message, 'dismiss', {
+            duration: 5000,
+          });
+        });
+      }
+    });
+
   }
 }

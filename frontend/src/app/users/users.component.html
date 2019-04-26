@@ -18,10 +18,10 @@
                         </div>
                     </div>
                     <div fxLayout="column" fxLayoutAlign="space-around center">
-                        <div fxFlex="50"><button mat-icon-button color="primary">
+                        <div fxFlex="50"><button mat-icon-button color="primary" (click)="callUser(user)">
                             <mat-icon aria-label="Example icon-button with a heart icon">call</mat-icon>
                         </button></div>
-                        <div fxFlex="50"><button mat-icon-button color="primary">
+                        <div fxFlex="50"><button mat-icon-button color="primary" (click)="messageUser(user)">
                             <mat-icon aria-label="Example icon-button with a heart icon">message</mat-icon>
                         </button></div>
                     </div>
@@ -31,39 +31,39 @@
     </div>
     <div fxFlex="50" fxLayout="column">
         <div fxFlex="50" fxLayoutGap="10px" fxLayout="column" class="padding-10">
-            <div>Update Contact</div>
+            <div>Add Contact</div>
             <form class="example-form" fxLayout="column">
-                <mat-form-field class="example-full-width">
+                <mat-form-field>
                     <input matInput placeholder="Name" [formControl]="addNameFormControl">
                     <mat-error *ngIf="addNameFormControl.hasError('required')">
                         Name is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
+                <mat-form-field>
                     <input matInput placeholder="Contact" [formControl]="addPasswordFormControl">
                     <mat-error *ngIf="addPasswordFormControl.hasError('required')">
                         Contact is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
+                <mat-form-field>
                     <input matInput placeholder="Email" [formControl]="addEmailFormControl">
                     <mat-error *ngIf="addEmailFormControl.hasError('required')">
                         Email is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="primary" (click)="addUser()">Add User</button>
+                <button mat-raised-button color="primary" (click)="addUser()">Add Contact</button>
             </form>
         </div>
         <div fxFlex="50" fxLayoutGap="10px" fxLayout="column" class="padding-10">
             <div>Update Contact</div>
             <form class="example-form" fxLayout="column">
-                <mat-form-field class="example-full-width">
+                <mat-form-field>
                     <input matInput placeholder="Name" [formControl]="nameFormControl">
                     <mat-error *ngIf="nameFormControl.hasError('required')">
                         Name is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
+                <mat-form-field>
                     <input matInput placeholder="Contact" [formControl]="emailFormControl">
                     <mat-error *ngIf="emailFormControl.hasError('required')">
                         Contact is <strong>required</strong>
