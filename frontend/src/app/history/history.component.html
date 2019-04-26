@@ -1,0 +1,25 @@
+<div fxLayout="column" fxFlexOffset="20" fxFlex="60" >
+    <mat-card *ngFor="let history of histories" fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="label" fxFlex="20">To :</div>
+            <div class="user-name" fxFlex="65">{{history.sentTo}}</div>
+            <div fxLayoutAlign="end">
+                <mat-icon *ngIf="history.type==='sms'" aria-label="Example icon-button with a heart icon" color="primary">message</mat-icon>
+                <mat-icon *ngIf="history.type!=='sms'" aria-label="Example icon-button with a heart icon" color="primary">call</mat-icon>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="label" fxFlex="20">Message :</div>
+            <div class="user-contact">{{history.userMessage}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="label" fxFlex="20">Mobile :</div>
+            <div class="user-contact" fxLayout="row">{{history.data[0].mobile}}<div class="mobile-status">({{history.data[0].status}})</div></div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <div class="label" >Date & Time :</div>
+            <div class="user-contact">{{history.time | date : 'medium'}}</div>
+        </div>
+    </mat-card>
+</div>

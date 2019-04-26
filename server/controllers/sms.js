@@ -16,12 +16,10 @@ exports.single_sms = function (req, res, next) {
     api_key: apiConfig.apiKey,
     sender: apiConfig.sender,
     method: apiConfig.method,
-
     to: req.body.contact,
     message: req.body.message
   };
 
-  console.log(apiConfig.url + "?" + querystring.stringify(params));
   request.get(
     {
       url: apiConfig.url + "?" + querystring.stringify(params),
@@ -38,9 +36,12 @@ exports.single_sms = function (req, res, next) {
       let history = new History({
         message: body.message,
         data: body.data,
-        status: body.status
+        status: body.status,
+        type: req.body.type,
+        userMessage: params.message,
+        sentTo: req.body.sentTo,
+        time: new Date()
       });
-
 
       history.save(function (err, hist) {
         if (err) {

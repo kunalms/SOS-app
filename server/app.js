@@ -11,6 +11,7 @@ mongoose.Promise = global.Promise;
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var smsRouter = require('./routes/sms');
+var historyRouter = require('./routes/history');
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/sms', smsRouter);
+app.use('/history', historyRouter);
 
 module.exports = app;
