@@ -1,0 +1,31 @@
+.user-list{
+  max-height: calc(100vh - 24px);
+}
+.user-email{
+  font-weight: lighter;
+  font-size: small;
+}
+
+.user-name{
+  font-weight: bold;
+  font-size: large;
+}
+
+.user-contact{
+  font-weight: bold;
+  font-size: medium;
+}
+
+.label{
+  font-weight: normal;
+  font-size: small;
+}
+
+mat-card{
+  margin: 5px;
+  cursor: pointer;
+}
+
+.padding-10{
+  padding: 10px;
+}

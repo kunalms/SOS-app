@@ -1,0 +1,79 @@
+<div fxLayout="row" fxLayoutAlign="space-between" class>
+    <div fxFlex="50" class="user-list" fxLayout="column">
+        <div *ngFor="let user of users">
+            <mat-card fxLayout="column" (click)="selectUser(user)">
+                <div fxLayout="row">
+                    <div fxFlex="80" fxLayoutAlign="space-around" fxLayout="column">
+                        <div fxLayout="row" fxLayoutGap="5%">
+                            <div class="label">Name:</div>
+                            <div class="user-name">{{user?.name}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5%">
+                            <div class="label">Contact:</div>
+                            <div class="user-contact"> {{user?.contact}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5%">
+                            <div class="label">Email:</div>
+                            <div class="user-email"> {{user?.email_id}}</div>
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="space-around center">
+                        <div fxFlex="50"><button mat-icon-button color="primary">
+                            <mat-icon aria-label="Example icon-button with a heart icon">call</mat-icon>
+                        </button></div>
+                        <div fxFlex="50"><button mat-icon-button color="primary">
+                            <mat-icon aria-label="Example icon-button with a heart icon">message</mat-icon>
+                        </button></div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <div fxFlex="50" fxLayout="column">
+        <div fxFlex="50" fxLayoutGap="10px" fxLayout="column" class="padding-10">
+            <div>Update Contact</div>
+            <form class="example-form" fxLayout="column">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Name" [formControl]="addNameFormControl">
+                    <mat-error *ngIf="addNameFormControl.hasError('required')">
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Contact" [formControl]="addPasswordFormControl">
+                    <mat-error *ngIf="addPasswordFormControl.hasError('required')">
+                        Contact is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Email" [formControl]="addEmailFormControl">
+                    <mat-error *ngIf="addEmailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="addUser()">Add User</button>
+            </form>
+        </div>
+        <div fxFlex="50" fxLayoutGap="10px" fxLayout="column" class="padding-10">
+            <div>Update Contact</div>
+            <form class="example-form" fxLayout="column">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Name" [formControl]="nameFormControl">
+                    <mat-error *ngIf="nameFormControl.hasError('required')">
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Contact" [formControl]="emailFormControl">
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Contact is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <div fxLayoutGap="10px">
+                    <button mat-raised-button color="primary" (click)="updateUser(selectedUser)">Update</button>
+                    <button mat-raised-button color="warn" (click)="deleteUser(selectedUser)">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

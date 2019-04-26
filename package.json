@@ -1,0 +1,16 @@
+{
+  "name": "kaleyra",
+  "version": "1.0.0",
+  "description": "disaster app",
+  "main": "index.js",
+  "scripts": {
+    "startDev": "concurrently \"cd server && npm run startDev\" \"cd frontend && ng build --watch\"",
+    "startProd": "concurrently \"cd server && node ./server.js\" \"cd frontend && ng build --prod --aot --vendor-chunk --build-optimizer\"",
+    "installDependecies": "concurrently \"cd server && npm install\" \"cd frontend && npm install\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
