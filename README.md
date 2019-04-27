@@ -1,7 +1,7 @@
 # Kaleyra Aid App
 
 
-Kaleyra Aid app is a light web based tool that leverages the kaleyra api for messaging and voice.
+Kaleyra Aid app is a light web-based tool that leverages the kaleyra API for messaging and voice.
 Some of the key features of Kaleyra Aid app are as under
   - Light weight
   - User friendly
@@ -24,14 +24,14 @@ Kaleyra Aid app uses a number of open source projects to work properly:
  you can access it by clicking [here](http://35.240.246.244:3000).
  
  The steps to use the app are very simple
- - on the home screen you can see all your contacts that you have added 
- - you can update the alreay added contacts or delete them if needed.
+ - on the home screen, you can see all your contacts that you have added 
+ - you can update the already added contacts or delete them if needed.
  - you can select the user by clicking on the card
  - the card has a call option and a message option. on clicking either of them you can call or message the respective person.
- - besides this there is a history tab that helps you keep the track of all your previous activites 
- - everything is stored on a mongo DB instance hosted online.
+ - besides this, there is a history tab that helps you keep track of all your previous activities 
+ - everything is stored on a Mongo DB instance hosted online.
 
-besides the online instance of the App you can install it on your local machine and run it locally the steps to run the application locally are as under
+besides the online instance of the App, you can install it on your local machine and run it locally the steps to run the application locally are as under
 
 #### Local Installation
 
@@ -41,7 +41,7 @@ unzip the folder submitted and go to the root folder.
 
 Install the dependencies and devDependencies for both backend and frontend and start the server.
 
-For running the code (recomeneded way to run the application)
+For running the code (recommended way to run the application)
 
 ```sh
 $ cd <root folder>
@@ -58,5 +58,4 @@ $ npm run installDependeciess
 $ npm install
 $ npm run startProd
 ```
-
 
