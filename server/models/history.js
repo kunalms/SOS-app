@@ -8,6 +8,7 @@ let HistorySchema = new Schema({
   type: {type: String},
   userMessage: {type: String},
   sentTo: {type:String},
+  sentFrom: {type:String},
   time: {type: Schema.Types.Date}
 });
 

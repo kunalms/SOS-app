@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var smsRouter = require('./routes/sms');
 var historyRouter = require('./routes/history');
+var voiceRouter = require('./routes/voice');
 
 var app = express();
 
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/sms', smsRouter);
+app.use('/voice', voiceRouter);
 app.use('/history', historyRouter);
+
 
 module.exports = app;

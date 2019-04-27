@@ -21,13 +21,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MessageDialogComponent} from './dialog/message-dialog/message-dialog.component';
 import {HistoryComponent} from './history/history.component';
+import {CallDialogComponent} from './dialog/call-dialog/call-dialog.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         UsersComponent,
         MessageDialogComponent,
-        HistoryComponent
+        HistoryComponent,
+        CallDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -49,7 +51,7 @@ import {HistoryComponent} from './history/history.component';
     ],
     providers: [],
     bootstrap: [AppComponent],
-    entryComponents: [MessageDialogComponent]
+    entryComponents: [MessageDialogComponent, CallDialogComponent]
 })
 export class AppModule {
 }

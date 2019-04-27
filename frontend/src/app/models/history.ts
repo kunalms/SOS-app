@@ -5,5 +5,6 @@ export class History {
     type: string;
     userMessage: string;
     sentTo: string;
+    sentFrom: string;
     time: string;
 }

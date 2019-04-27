@@ -8,13 +8,17 @@
                 <mat-icon *ngIf="history.type!=='sms'" aria-label="Example icon-button with a heart icon" color="primary">call</mat-icon>
             </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" fxLayoutAlign="start center" *ngIf="!history.data[0]">
+            <div class="label" fxFlex="20">From :</div>
+            <div class="user-contact">{{history.sentFrom}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" *ngIf="history.data[0]">
             <div class="label" fxFlex="20">Message :</div>
             <div class="user-contact">{{history.userMessage}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" fxLayoutAlign="start center" *ngIf="history.data[0]">
             <div class="label" fxFlex="20">Mobile :</div>
-            <div class="user-contact" fxLayout="row">{{history.data[0].mobile}}<div class="mobile-status">({{history.data[0].status}})</div></div>
+            <div class="user-contact" fxLayout="row">{{history.data[0]?.mobile}}<div class="mobile-status">({{history.data[0]?.status}})</div></div>
         </div>
 
         <div fxLayout="row" fxLayoutAlign="end center">
