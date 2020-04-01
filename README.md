@@ -1,7 +1,7 @@
-# Kaleyra Aid App
+# SOS App
 
 
-Kaleyra Aid app is a light web-based tool that leverages the kaleyra API for messaging and voice.
+SOS app is a light web-based tool that leverages the kaleyra API for messaging and voice.
 Some of the key features of Kaleyra Aid app are as under
   - Light weight
   - User friendly
